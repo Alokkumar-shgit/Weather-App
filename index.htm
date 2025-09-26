@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header style="width:100%;background:linear-gradient(135deg,#f7c873,#e85d04);color:#fff;text-align:center;padding:1.2rem 0 0.7rem 0;border-radius:0 0 18px 18px;box-shadow:0 2px 8px #0002;letter-spacing:1px;font-family: 'Montserrat', Arial, sans-serif;">
+        <button id="theme-toggle" aria-label="Toggle theme" style="position:absolute;top:18px;right:18px;padding:8px 16px;border-radius:8px;background:#fff;color:#e85d04;font-weight:600;border:none;box-shadow:0 2px 8px #0002;cursor:pointer;transition:background 0.2s;z-index:2;font-family:'Montserrat',Arial,sans-serif;">🌙 Dark</button>
+        <h1 style="font-size:2.2rem;margin-bottom:0.2em;">Odisha Weather & Heritage</h1>
+        <p style="font-size:1.1rem;opacity:0.85;">Experience Odisha’s rich culture and stay updated with real-time weather conditions.</p>
+        <div style="margin-top:0.7em;font-size:1rem;background:rgba(255,255,255,0.13);border-radius:12px;display:inline-block;padding:0.7em 1.2em;box-shadow:0 2px 8px #0001;max-width:90vw;">
+            <strong>Odisha Climate Fact:</strong> Odisha has a tropical climate, with hot summers, heavy monsoon rains, and mild winters. The coastal region is often affected by cyclones, while the state is famous for its lush greenery and vibrant festivals like Rath Yatra.
+        </div>
+    </header>
+    <main style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;">
+    <div class="card" aria-label="Weather Information Card">
+        <div class="search" aria-label="Search Weather">
+            <input type="text" placeholder="Enter city name" spellcheck="false" aria-label="City name" style="font-family: 'Montserrat', Arial, sans-serif;">
+            <button aria-label="Search Weather"> <img src="IMage/IMG-20241123-WA0009.jpg" alt="Search"></button>
+        </div>
+        <div class="loading" style="display:none;text-align:center;margin:10px 0;" aria-live="polite">
+            <span style="display:inline-block;width:32px;height:32px;border:4px solid #fff;border-top:4px solid #5b548a;border-radius:50%;animation:spin 1s linear infinite;"></span>
+        </div>
+        <div class="error">
+            <p>Invalid city name</p>
+        </div>
+    <div class="weather">
+            <img src="IMage/rain.jpg" class="weather-icon" alt="Weather Icon">
+            <h1 class="temp">22°c</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="IMage/IMG-20241123-WA0001.jpg" alt="Humidity">
+                    <div><p class="humidity">50%</p>
+                    <p>Humidity</p></div>
+                </div> 
+                <div class="col">
+                    <img src="IMage/IMG-20241123-WA0002.jpg" alt="Wind Speed">
+                    <div><p class="wind">15km/h</p>
+                    <p>Wind speed</p></div>
+                </div>
+            </div>
+    </div>
+    <button class="save-btn" style="margin-top:18px;padding:10px 22px;border-radius:8px;background:#5b548a;color:#fff;font-family:'Montserrat',Arial,sans-serif;font-size:1rem;border:none;cursor:pointer;box-shadow:0 2px 8px #0002;transition:background 0.2s;">Save City</button>
+    </div>
+    <section class="saved-cities" style="width:100%;max-width:420px;margin:24px auto 0 auto;background:rgba(255,255,255,0.08);border-radius:16px;box-shadow:0 2px 8px #0001;padding:18px 16px;">
+        <h2 style="font-size:1.2rem;color:#5b548a;margin-bottom:10px;font-family:'Montserrat',Arial,sans-serif;">Saved Cities</h2>
+        <ul class="saved-list" style="list-style:none;padding:0;margin:0;"></ul>
+        <p class="saved-limit-msg" style="color:#ff4d4f;font-size:0.95rem;display:none;margin-top:8px;">Maximum 3 cities can be saved.</p>
+    </section>
+    </main>
+    <footer style="width:100%;background:linear-gradient(135deg,#5b548a,#00feba);color:#fff;text-align:center;padding:0.7rem 0;border-radius:18px 18px 0 0;box-shadow:0 -2px 8px #0002;letter-spacing:1px;font-family: 'Montserrat', Arial, sans-serif;position:relative;bottom:0;margin-top:2rem;">
+        <p style="margin:0;font-size:1rem;">&copy; 2025 Weather App | Powered by OpenWeatherMap</p>
+    </footer>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (max-width: 600px) {
+            header, footer {
+                font-size: 0.95rem;
+                padding: 0.7rem 0;
+            }
+            .card {
+                padding: 10px 2px;
+                max-width: 98vw;
+            }
+            main {
+                min-height: 60vh;
+            }
+        }
+    </style>
+</body>
+<script src="script.js"></script>
+</html>
